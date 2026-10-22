@@ -1,0 +1,16 @@
+.venv/
+__pycache__/
+*.py[cod]
+.cache/
+.gradio/
+*.egg-info/
+.DS_Store
+.env
+.idea/
+.vscode/
+
+# Local test data (large / regenerated)
+datasets/
+test_variants/
+seeds/
+*.npy
