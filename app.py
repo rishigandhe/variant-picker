@@ -354,6 +354,12 @@ No labels needed. First run downloads a model once (~1–2 min on a laptop).
     return demo
 
 
+# Module-level ASGI app for Vercel / other ASGI hosts.
+demo = build_ui()
+demo.queue()
+app = demo.app
+
+
 if __name__ == "__main__":
     import argparse
 
@@ -361,4 +367,4 @@ if __name__ == "__main__":
     ap.add_argument("--share", action="store_true", help="Create a public Gradio share link")
     ap.add_argument("--port", type=int, default=7860)
     args = ap.parse_args()
-    build_ui().launch(share=args.share, server_port=args.port)
+    demo.launch(share=args.share, server_port=args.port)
